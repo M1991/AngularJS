@@ -46,5 +46,8 @@ I hope that helps to clarify some basic knowledge about all this.
 Further readings:
 
     Make Your Own AngularJS, Part 1: Scopes And Digest (awesome article!)
+	http://stackoverflow.com/questions/15112584/how-do-i-use-scope-watch-and-scope-apply-in-angularjs
 	http://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html
+	http://tutorials.jenkov.com/angularjs/watch-digest-apply.html
+	https://www.sitepoint.com/mastering-watch-angularjs/
 
