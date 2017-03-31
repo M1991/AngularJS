@@ -1,0 +1,131 @@
+<DOCTYPE html>
+<html ng-app="testApp">
+	<head>
+		<title>Home Page2</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="content-language"/>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+		<script src="js/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+		<link rel="stylesheet" href="js/css/loginPage.css"/>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.js"></script> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.js"></script> -->
+		<!-- <script src="../js/js"></script> -->
+		<script src="js/bootstrap.js"></script>
+		
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/loginPage2.js"></script>
+	</head>
+	<body ng-controller="testCtrl">
+		<div class="container-fluid">
+			
+			<div class="row">
+				<div class="col-sm-2 navigationhome">
+					<div class="row">
+						<div class="col-sm-12">
+							<a ui-sref="home" class="white">Home</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a ui-sref="about" class="white">About</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12"></div>
+					</div>
+				</div>
+				<div class="col-sm-10">
+				<div class="row">&nbsp;</div>
+					<!-- <div class="row"> -->
+						<!-- <div class="col-sm-10"></div> -->
+						<!-- <div class="col-sm-2"><button ng-click="">Logout</button></div> -->
+					<!-- </div> -->
+					<br>
+					<div class="row">
+						<div class="col-sm-12"><h4><b>Employee Details</b></h4></div>
+					</div><br>
+					<div class="row">
+						<div class="col-sm-6">Search : &nbsp;<input type="text" id="search" ng-model="searMod"/></div>
+							<!-- ng-change="searchFunc(searMod)" -->
+						<div class="col-sm-6"></div>
+					</div><br>
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table table-striped">
+									<thead id="headOne">
+									  <tr>
+										<th>
+											<input type="checkbox" ng-click="toggleAll()" ng-model="isAllSelected">  Mark All
+										</th>
+										<th colspan="3" class="text-center">Employee Details</th>
+										
+									  </tr>
+									</thead>
+									<thead id="headTwo">
+									  <tr>
+										<th>Employee Name</th>
+										<th>Designation</th>
+										<th>Email</th>
+										<th>Action</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr ng-repeat="row in userList | filter:searMod">
+										<td><input type="checkbox" ng-model="row.selected" ng-change="optionToggled()">  {{row.fname}}  {{row.lname}}</td>
+										<td>{{row.desg}}</td>
+										<td>{{row.email}}</td>
+										<td><button ng-click="editForm($index)">Edit</button>&nbsp;&nbsp;<button ng-click="delForm(row.fname)">Delete</button></td>
+									  </tr>
+									</tbody>
+								  </table>
+						</div>
+					</div><br><br>
+					<div class="row">
+						<div class="col-sm-12"><b>Add Details</b></div>
+					</div>
+					<div class="row">
+						<form name="detailsForm" ng-submit="subForm(detailsForm.$valid)" class="form-inline" role="form" novalidate>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="text" name="fname" id="fname" ng-model="formdata.fname" placeholder="First Name" autocomplete="off" required="true"/>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" name="lname" id="lname" ng-model="formdata.lname" placeholder="Last Name" autocomplete="off" required="true"/>
+									</div>
+								</div><br>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-12">
+												<input type="text" name="desg" id="desg" ng-model="formdata.desg" placeholder="Designation" autocomplete="off" required="true"/>
+											</div>
+										</div><br>
+										<div class="row">
+											<div class="col-sm-12">
+												<input type="email" name="email" id="email" ng-change="emailcheck(email)" ng-model="formdata.email" placeholder="Email" autocomplete="off" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6"></div>
+								</div><br>
+								<div class="row">
+									<div class="col-sm-6">
+										<button type="submit" ng-show="savebtn" ng-click="saveForm()">Save</button>
+										<!-- <button type="submit" ng-show="addbtn" id="addbtn" ng-click="adddet(formdata)">Add</button> -->
+										<button type="submit" ng-show="addbtn" id="addbtn" ng-disabled="detailsForm.$invalid">Add</button>
+									</div>
+									<div class="col-sm-6"></div>
+								</div>
+							</div>
+							<div class="col-sm-6"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

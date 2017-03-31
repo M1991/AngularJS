@@ -1,0 +1,99 @@
+/*
+#loginBox { 
+	margin-top:100px; 
+	border:1px solid black; 
+ } */
+#logBox {
+	/* margin-top:200px; */
+	margin:120px 10px 10px 10px;
+	border:1px solid  #e1dddc;
+	border-radius:8px;
+	padding:35px;
+	
+}
+
+#formLog {
+	background-color: #e1dddc;
+	
+}
+.navigationhome {
+	background-color: #055685;
+	height:630px;
+	
+	padding:5px;
+	
+}
+
+.navigation {
+	background-color: #055685;
+	height:55px;
+	
+	padding:5px;
+	
+}
+
+#headOne{
+	color:white;
+	background-color:black;
+	border:1px;
+	border-color:white;
+}
+
+
+#headTwo{
+	background-color: #767a7c ;
+	color:white;
+}
+
+a:hover {
+	color:white;
+}
+.white{
+	color:white;
+}
+
+.form-control{
+	background-color: #f4f1f0;
+}
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+  width:305px;
+}
+.btn-info:focus,
+.btn-info.focus {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #1b6d85;
+}
+.btn-info:hover {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.btn-info:active:hover,
+.btn-info.active:hover,
+.open > .dropdown-toggle.btn-info:hover,
+.btn-info:active:focus,
+.btn-info.active:focus,
+.open > .dropdown-toggle.btn-info:focus,
+.btn-info:active.focus,
+.btn-info.active.focus,
+.open > .dropdown-toggle.btn-info.focus {
+  color: #fff;
+  background-color: #269abc;
+  border-color: #1b6d85;
+}
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  background-image: none;
+}
